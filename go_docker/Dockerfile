@@ -9,6 +9,7 @@ ENV GO111MODULE=on \
 # Move to working directory /build
 WORKDIR /build
 
+# had to add to original example
 RUN go mod init docker 
 RUN go mod tidy
 
@@ -16,6 +17,7 @@ RUN go mod tidy
 COPY go.mod .
 COPY go.sum .
 RUN go mod download
+# had to add to original example
 RUN go get github.com/afdolriski/golang-docker/database
 
 # Copy the code into the container
